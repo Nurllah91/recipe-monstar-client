@@ -5,7 +5,7 @@ import './NavBar.css';
 const NavBar = () => {
     return (
 
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-gradient-to-r from-purple-500 to-pink-500">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -17,7 +17,7 @@ const NavBar = () => {
                     <li><Link to='/blog'>Blog</Link></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl nav-logo">Recipe Monstar</a>
+                <a className="btn btn-ghost  normal-case text-3xl nav-logo shadow-xl">Recipe Monstar</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -26,8 +26,8 @@ const NavBar = () => {
                     <li><Link to='/blog'>Blog</Link></li>
                 </ul>
             </div>
-            <div className="navbar-end">
-                <Link to='/login' className="btn">Login</Link>
+            <div className="navbar-end ">
+                <Link to='/login' className="btn btn-secondary shadow-xl text-black font-bold">Login</Link>
             </div>
         </div>
 

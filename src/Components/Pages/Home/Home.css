@@ -1,0 +1,7 @@
+.homeBanner{
+    background-image: url(homeBanner.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+}
