@@ -1,8 +1,10 @@
+import { useLoaderData } from "react-router-dom";
 
 const Chef = () => {
+    const chef = useLoaderData();
     return (
         <div>
-            this is chefs page
+           {chef.name}
         </div>
     );
 };

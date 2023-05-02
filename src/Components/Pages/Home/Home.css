@@ -1,5 +1,6 @@
 .homeBanner{
-    background-image: url(homeBanner.jpg);
+    background: url(homeBanner.jpg),#00000082;
+    background-blend-mode: multiply;
     background-position: right;
     background-repeat: no-repeat;
     width: 100%;
