@@ -1,9 +1,12 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import About from "../Pages/About/About";
 import Blog from "../Pages/Blog/Blog";
 import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
+import Chef from "../Pages/Chef/Chef";
+import LoginLayout from "../Layout/LoginLayout";
+import Home from "../Pages/Home/Home";
 
 
 
@@ -12,27 +15,50 @@ import Registration from "../Pages/Registration/Registration";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main></Main>,
+    element: <LoginLayout></LoginLayout>,
     children: [
       {
-        path: 'about',
+        path: '/',
+        element: <Navigate to='/chefs'></Navigate>
+
+      },
+      {
+        path: '/about',
         element: <About></About>
       },
       {
-        path: 'blog',
+        path: '/blog',
         element:<Blog></Blog>
       },
       {
-        path: 'login',
+        path: '/login',
         element:<Login></Login>
       },
       {
-        path: 'registration',
+        path: '/registration',
         element:<Registration></Registration>
       }
     ]
 
   },
+
+  {
+    path: 'chefs',
+    element: <Main></Main>,
+    children: [
+      {
+        path: '/chefs',
+        element: <Home></Home>,
+        loader:() => fetch('https://recipe-monstar-server-nurllah91.vercel.app/chefs')
+      },
+      {
+        path:'/chefs/:id',
+        element:<Chef></Chef>,
+        loader: ({params}) => fetch(`https://recipe-monstar-server-nurllah91.vercel.app/chefs/${params.id}`)
+      }
+    ]
+
+  }
 ]);
 
 export default router;

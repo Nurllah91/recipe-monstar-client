@@ -1,8 +1,11 @@
+import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
+    const chefs = useLoaderData();
     return (
+
         <div>
-            Home page
+           <h2 className="text-5xl">Available chefs: {chefs.length}</h2>
         </div>
     );
 };
