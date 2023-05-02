@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import Recipe from "./Recipe";
 
 const Chef = () => {
     const chef = useLoaderData();
@@ -7,11 +8,11 @@ const Chef = () => {
         <div>
             <div className="homeBanner min-h-[calc(100vh-40vh)] text-white text-center">
                 <div className="text-center pt-10">
-                    <div className="md:w-[20%] w-[50%] mx-auto mask mask-hexagon">
+                    <div className="md:w-[40%] w-[50%] mx-auto mask mask-hexagon">
                         <img src={chef_image}/>
                     </div>
                 </div>
-                <div>
+                <div className="pb-10">
                     <h3 className="text-3xl font-bold mt-5">Name: {name}</h3>
                     <p className="w-[60%] mx-auto">{description}</p>
                     <div className="mt-5">
@@ -22,6 +23,16 @@ const Chef = () => {
                 </div>
 
             </div>
+
+            <div>
+                {
+                    recipes.map(recipe =><Recipe key={recipe.recipe_id} recipe={recipe}></Recipe>)
+                }
+            </div>
+
+
+
+
 
 
         </div>
