@@ -9,6 +9,7 @@ import LoginLayout from "../Layout/LoginLayout";
 import Home from "../Pages/Home/Home";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import ComingSoon from "../Pages/CommingSoon/ComingSoon";
 
 
 
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: '/registration',
         element:<Registration></Registration>
+      },
+      {
+        path:'/coming',
+        element: <ComingSoon></ComingSoon>
       }
     ]
 
