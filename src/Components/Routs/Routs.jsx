@@ -7,6 +7,7 @@ import Registration from "../Pages/Registration/Registration";
 import Chef from "../Pages/Chef/Chef";
 import LoginLayout from "../Layout/LoginLayout";
 import Home from "../Pages/Home/Home";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 
@@ -55,9 +56,17 @@ const router = createBrowserRouter([
         path:'/chefs/:id',
         element:<Chef></Chef>,
         loader: ({params}) => fetch(`https://recipe-monstar-server-nurllah91.vercel.app/chefs/${params.id}`)
+      },
+      {
+        path: '*',
+        element:<ErrorPage></ErrorPage>
       }
     ]
 
+  },
+  {
+    path: '*',
+    element:<ErrorPage></ErrorPage>
   }
 ]);
 
