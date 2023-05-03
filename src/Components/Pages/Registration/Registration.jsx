@@ -1,17 +1,40 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider/AuthProvider";
+import swal from 'sweetalert'
 
 
 const Registration = () => {
 
     const [show, setShow] = useState(false)
+    const {createUser} = useContext(AuthContext)
+    const [error, setError] = useState('')
 
-    const handleSignIn = (event) => {
+    const handleSignUp = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+        createUser(email, password)
+        .then(result =>{
+            swal({
+                title: "Congratulation!",
+                text: "Your account created successful!",
+                icon: "success",
+                button: "Login",
+              });
+    
+            console.log(result)
+            form.reset();
+        })
+        .catch(e =>{
+            setError(e.message)
+            console.log(error)
+            form.reset();
+        })
+
+      
 
     }
 
@@ -25,7 +48,7 @@ const Registration = () => {
             <h3 className="text-3xl my-3 font-bold">Please Sign up</h3>
 
 
-            <form onSubmit={handleSignIn}>
+            <form onSubmit={handleSignUp}>
                 <div>
                     <label className="block" htmlFor="name">Name</label>
                     <input
@@ -71,7 +94,6 @@ const Registration = () => {
                         type="text"
                         id="photo"
                         name="photo"
-                        required
                         placeholder="Enter Your Photo Url"
                         className="p-2 shadow-xl w-full rounded "
                     />
@@ -79,6 +101,9 @@ const Registration = () => {
 
                 <button className="btn btn-secondary w-full shadow-xl  my-5" type="submit">Sign up</button>
             </form>
+            <p className="font-bold text-red-700">
+                {error}
+            </p>
 
             <p className="mt-5">Already Have an account? <Link className="text-primary underline" to='/login'>Login</Link></p>
 
