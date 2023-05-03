@@ -4,3 +4,9 @@
 .nav-logo{
     font-family: 'Creepster', cursive;
 }
+
+.active{
+   font-weight: bold;
+   color: white;
+   background-color: rgb(220, 43, 226);
+}
