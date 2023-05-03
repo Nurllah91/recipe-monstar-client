@@ -23,6 +23,7 @@ const Login = () => {
         signIn(email, password)
         .then( () =>{
             form.reset();
+            setError('')
             navigate(from, { replace: true });
             
         })

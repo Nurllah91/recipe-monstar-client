@@ -16,25 +16,30 @@ const Registration = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
-        createUser(email, password)
-        .then(result =>{
-            swal({
-                title: "Congratulation!",
-                text: "Your account created successful!",
-                icon: "success",
-                button: "Login",
-              });
-    
-            console.log(result)
-            form.reset();
-           navigate('/login')
-        })
-        .catch(e =>{
-            setError(e.message)
-            console.log(error)
-            form.reset();
-        })
+       
+        if(password.length < 6){
+            setError('Password should be more than 6 character')
+        }
+        else{
+            createUser(email, password)
+            .then( () =>{
+                swal({
+                    title: "Congratulation!",
+                    text: "Your account created successful!",
+                    icon: "success",
+                    button: "Login",
+                  });
+        
+                form.reset();
+                setError('')
+               navigate('/login')
+            })
+            .catch(e =>{
+                setError(e.message)
+                console.log(error)
+                form.reset();
+            })
+        }
 
       
 

@@ -8,6 +8,7 @@ import Chef from "../Pages/Chef/Chef";
 import LoginLayout from "../Layout/LoginLayout";
 import Home from "../Pages/Home/Home";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 
 
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/chefs/:id',
-        element:<Chef></Chef>,
+        element:<PrivateRoute><Chef></Chef></PrivateRoute>,
         loader: ({params}) => fetch(`https://recipe-monstar-server-nurllah91.vercel.app/chefs/${params.id}`)
       }
       
