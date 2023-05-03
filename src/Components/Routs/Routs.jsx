@@ -17,6 +17,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <LoginLayout></LoginLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -46,6 +47,7 @@ const router = createBrowserRouter([
   {
     path: 'chefs',
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/chefs',
@@ -56,18 +58,12 @@ const router = createBrowserRouter([
         path:'/chefs/:id',
         element:<Chef></Chef>,
         loader: ({params}) => fetch(`https://recipe-monstar-server-nurllah91.vercel.app/chefs/${params.id}`)
-      },
-      {
-        path: '*',
-        element:<ErrorPage></ErrorPage>
       }
+      
     ]
 
-  },
-  {
-    path: '*',
-    element:<ErrorPage></ErrorPage>
   }
+  
 ]);
 
 export default router;
