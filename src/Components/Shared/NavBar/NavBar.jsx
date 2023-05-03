@@ -1,8 +1,12 @@
 import { Link, NavLink } from 'react-router-dom';
 import './NavBar.css';
-
+import { useContext } from 'react';
+import { AuthContext } from '../../provider/AuthProvider/AuthProvider';
+import { FaUserCircle } from "react-icons/fa";
 
 const NavBar = () => {
+
+    const {user} = useContext(AuthContext)
     return (
 
         <div className="navbar bg-gradient-to-r from-purple-500 to-pink-500">
@@ -39,7 +43,12 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end ">
-                <Link to='/login' className="btn btn-secondary shadow-xl text-black font-bold">Login</Link>
+
+                {
+                    user?<FaUserCircle className='text-4xl'></FaUserCircle>: <Link to='/login' className="btn btn-secondary shadow-xl text-black font-bold">Login</Link>
+                }
+
+               
             </div>
         </div>
 

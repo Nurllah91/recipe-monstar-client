@@ -1,12 +1,18 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider/AuthProvider";
+import swal from 'sweetalert'
+
 
 const Login = () => {
 
     const [show, setShow] = useState(false)
     const [error, setError] = useState('')
     const {signIn} = useContext(AuthContext)
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -15,11 +21,18 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password);
         signIn(email, password)
-        .then(result =>{
-            console.log(result)
-            form.reset()
+        .then( () =>{
+            form.reset();
+            navigate(from, { replace: true });
+            
         })
         .catch(e =>{
+            swal({
+                title: "Opps!",
+                text: `${e.message}`,
+                icon: "error",
+                button: "Okay",
+              });
             setError(e.message)
             form.reset()
         })
