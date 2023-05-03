@@ -3,6 +3,8 @@ import './Home.css'
 import ChefCard from "./ChefCard/ChefCard";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider/AuthProvider";
+import CookTogether from "../CookTogather/CookTogether";
+import GetInTouch from "../GetInTouch/GetInTouch";
 
 const Home = () => {
 
@@ -46,6 +48,12 @@ const Home = () => {
                 {
                     chefs.map(chef => <ChefCard key={chef.id} chef={chef}></ChefCard>)
                 }
+            </div>
+            <div>
+                <CookTogether></CookTogether>
+            </div>
+            <div className=" bg-fuchsia-50 ">
+                <GetInTouch></GetInTouch>
             </div>
         </div>
     );
