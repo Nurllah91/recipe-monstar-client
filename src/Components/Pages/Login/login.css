@@ -1,0 +1,8 @@
+.loginPage{
+    
+    background: url(pizza.jpg), rgba(0, 0, 0, 0.727);
+    background-position: center;
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

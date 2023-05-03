@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider/AuthProvider";
 import swal from 'sweetalert'
+import { updateProfile } from "firebase/auth";
 
 
 const Registration = () => {
@@ -14,15 +15,19 @@ const Registration = () => {
     const handleSignUp = (event) => {
         event.preventDefault();
         const form = event.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
+
        
         if(password.length < 6){
             setError('Password should be more than 6 character')
         }
         else{
             createUser(email, password)
-            .then( () =>{
+            .then( (result) =>{
+                const user = result.user;
                 swal({
                     title: "Congratulation!",
                     text: "Your account created successful!",
@@ -32,6 +37,7 @@ const Registration = () => {
         
                 form.reset();
                 setError('')
+                updateNameAndPhoto(user, name, photo)
                navigate('/login')
             })
             .catch(e =>{
@@ -40,9 +46,18 @@ const Registration = () => {
                 form.reset();
             })
         }
+    }
 
-      
-
+    const updateNameAndPhoto = (user, name, photo) =>{
+        updateProfile(user, {
+            displayName: name, photoURL: photo
+            
+        })
+        .then()
+        .catch(err =>{
+            console.log(err)
+        })
+        
     }
 
     const handleShow = (event) => {
@@ -51,7 +66,8 @@ const Registration = () => {
 
 
     return (
-        <div className=" bg-gradient-to-l from-purple-400 to-pink-400 my-10 p-10 w-11/12 md:w-1/2 lg:w-1/4 mx-auto rounded-lg">
+       <div className="loginPage py-10">
+         <div className=" bg-gradient-to-l from-purple-400 to-pink-400  p-10 w-11/12 md:w-1/2 lg:w-1/4 mx-auto rounded-lg">
             <h3 className="text-3xl my-3 font-bold">Please Sign up</h3>
 
 
@@ -115,6 +131,7 @@ const Registration = () => {
             <p className="mt-5">Already Have an account? <Link className="text-primary underline" to='/login'>Login</Link></p>
 
         </div>
+       </div>
     );
 };
 
