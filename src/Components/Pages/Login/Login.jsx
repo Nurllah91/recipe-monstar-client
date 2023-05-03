@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider/AuthProvider";
 
 const Login = () => {
 
     const [show, setShow] = useState(false)
+    const [error, setError] = useState('')
+    const {signIn} = useContext(AuthContext)
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -11,6 +14,15 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+        signIn(email, password)
+        .then(result =>{
+            console.log(result)
+            form.reset()
+        })
+        .catch(e =>{
+            setError(e.message)
+            form.reset()
+        })
        
     }
 
@@ -55,6 +67,7 @@ const Login = () => {
 
                 <button className="btn btn-secondary w-full shadow-xl  my-5" type="submit">Login</button>
             </form>
+            
             <div>
                 <p className="text-center text-2xl font-bold">Login with</p>
                 <button className="btn btn-outline block mt-3 hover:bg-gradient-to-r from-purple-500 to-pink-500 font-bold   w-full ">Google</button>
@@ -63,6 +76,9 @@ const Login = () => {
             </div>
             <p className="mt-5">New to this website? <Link className="text-primary underline" to='/registration'>Registration</Link></p>
 
+            <p className="font-bold text-red-700">
+                {error}
+            </p>
         </div>
     );
 };
