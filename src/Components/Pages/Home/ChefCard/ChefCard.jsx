@@ -11,12 +11,16 @@ const ChefCard = ({ chef }) => {
             <div className=" w-11/12 lg:w-9/12 mb-8 mx-auto card lg:card-side bg-pink-100 shadow-xl">
 
 
-                <LazyLoadImage
+              <div>
+              <LazyLoadImage
                     alt={'chef image'}
                     effect="blur"
                     src={chef_image}
-                    className="w-full max-h-80"
+                    width={350}
+                    className="w-full rounded-l-lg max-h-80"
+                    
                     />
+              </div>
                 {/* <img className="w-[50%] max-h-80" src={chef_image} alt="Album" /> */}
                 <div className="card-body">
                     <h2 className="card-title text-3xl font-bold">Name: {name}</h2>
