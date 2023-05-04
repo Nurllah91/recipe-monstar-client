@@ -10,7 +10,7 @@ const CookTogether = () => {
             <Link to='/coming' className="btn btn-secondary mt-6 shadow-lg">Get started</Link>
            </div>
            <div>
-            <img className="w-full rounded-full" src="chef.jpg" alt="chef image" />
+            <img className="w-full rounded-full" src="https://i.ibb.co/Pr9SWL1/chef.jpg" alt="chef image" />
            </div>
             
         </div>

@@ -28,6 +28,7 @@ const Registration = () => {
             createUser(email, password)
             .then( (result) =>{
                 const user = result.user;
+                updateNameAndPhoto(user, name, photo);
                 swal({
                     title: "Congratulation!",
                     text: "Your account created successful!",
@@ -37,8 +38,7 @@ const Registration = () => {
         
                 form.reset();
                 setError('')
-                updateNameAndPhoto(user, name, photo)
-               navigate('/login')
+               navigate('/')
             })
             .catch(e =>{
                 setError(e.message)

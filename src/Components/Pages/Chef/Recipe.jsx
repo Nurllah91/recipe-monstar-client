@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Recipe.css'
 import swal from 'sweetalert';
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart, FaStar } from "react-icons/fa";
 const Recipe = ({ recipe }) => {
     const { recipe_name, rating, ingredients, cooking_method } = recipe;
     const [mark, setMark] = useState(false)
@@ -42,7 +42,7 @@ const Recipe = ({ recipe }) => {
                     </tr>
                     <tr>
                         <td>Ratings</td>
-                        <td>{rating} star</td>
+                        <td className='flex items-center'>{rating}<FaStar className='text-yellow-500 mx-2 text-xl'></FaStar> </td>
                     </tr>
                     <tr>
                         <td colSpan={2} className='text-center'><button
