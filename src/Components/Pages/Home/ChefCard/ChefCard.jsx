@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import { FaHandPointRight } from "react-icons/fa";
 
 
 const ChefCard = ({ chef }) => {
@@ -21,7 +22,7 @@ const ChefCard = ({ chef }) => {
                     <h2 className="card-title text-3xl font-bold">Name: {name}</h2>
                     <p className="font-bold">Years of experience: {years_of_experience}</p>
                     <p className="font-bold">Numbers of recipes: {recipes.length}</p>
-                    <p className="font-bold">Likes: {likes}k</p>
+                    <p className="font-bold flex items-center"><FaHandPointRight className="text-rose-600 mx-2"></FaHandPointRight> Likes: {likes}k</p>
                     <div className="card-actions justify-end">
                         <Link to={`/chefs/${id}`}> <button className="btn bg-pink-500 border-0">View Recipes</button></Link>
                     </div>
