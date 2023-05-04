@@ -1,12 +1,11 @@
 import { Link, useLoaderData } from "react-router-dom";
 import './Home.css'
-import React from 'react';
-import { Suspense, useContext } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider/AuthProvider";
 import CookTogether from "../CookTogather/CookTogether";
 import GetInTouch from "../GetInTouch/GetInTouch";
 
-const ChefCard = React.lazy(() => import("./ChefCard/ChefCard"));
+import ChefCard from "./ChefCard/ChefCard";
 
 const Home = () => {
 
@@ -51,16 +50,10 @@ const Home = () => {
             <div className="mt-10">
                 <h3 className="text-4xl text-center my-5 font-bold text-fuchsia-700 w-[95%] mx-auto">List of Famous chinese chef</h3>
 
-                <Suspense fallback={<div className='flex justify-center items-center h-[calc(100vh-68px)]'>
-                    <p className='text-7xl font-bold'>L</p>
-                    <div className='w-10 h-10 border-8 border-dashed rounded-full animate-spin mt-5 border-pink-600'></div>
-                    <p className='text-7xl font-bold'>ading....</p>
-                </div>}>
                     {
                         chefs.map(chef => <ChefCard key={chef.id} chef={chef}></ChefCard>)
                     }
-
-                </Suspense>
+              
             </div>
             <div>
                 <CookTogether></CookTogether>
