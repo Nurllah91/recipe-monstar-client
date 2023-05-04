@@ -9,7 +9,7 @@ const Registration = () => {
 
     const navigate = useNavigate()
     const [show, setShow] = useState(false)
-    const {createUser} = useContext(AuthContext)
+    const {createUser, setPhoto, setName} = useContext(AuthContext)
     const [error, setError] = useState('')
 
     const handleSignUp = (event) => {
@@ -33,7 +33,7 @@ const Registration = () => {
                     title: "Congratulation!",
                     text: "Your account created successful!",
                     icon: "success",
-                    button: "Login",
+                    button: "Okay",
                   });
         
                 form.reset();
@@ -50,10 +50,14 @@ const Registration = () => {
 
     const updateNameAndPhoto = (user, name, photo) =>{
         updateProfile(user, {
-            displayName: name, photoURL: photo
+            displayName: name,
+            photoURL: photo
             
         })
-        .then()
+        .then(
+            setPhoto(photo),
+            setName(name)
+        )
         .catch(err =>{
             console.log(err)
         })

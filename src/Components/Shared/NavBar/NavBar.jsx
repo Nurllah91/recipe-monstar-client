@@ -5,7 +5,7 @@ import { AuthContext } from '../../provider/AuthProvider/AuthProvider';
 
 const NavBar = () => {
 
-    const {user} = useContext(AuthContext)
+    const {user, photo, name} = useContext(AuthContext)
     console.log(user);
     return (
 
@@ -45,7 +45,7 @@ const NavBar = () => {
             <div className="navbar-end ">
 
                 {
-                    user? <img src={user.photoURL} className='w-12 h-12 rounded-full' alt='user' title={user.displayName} />: <Link to='/login' className="btn btn-secondary shadow-xl text-black font-bold">Login</Link>
+                    user? <img src={user.photoURL || photo} className='w-12 h-12 rounded-full' alt='user' title={user.displayName || name} />: <Link to='/login' className="btn btn-secondary shadow-xl text-black font-bold">Login</Link>
                 }
 
                
