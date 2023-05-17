@@ -2,10 +2,11 @@ import { Link, NavLink } from 'react-router-dom';
 import './NavBar.css';
 import { useContext } from 'react';
 import { AuthContext } from '../../provider/AuthProvider/AuthProvider';
+import { FaUser } from 'react-icons/fa';
 
 const NavBar = () => {
 
-    const {user, photo, name} = useContext(AuthContext)
+    const {user, photo, name, logOut} = useContext(AuthContext)
     return (
 
         <div className="navbar bg-gradient-to-r from-purple-500 to-pink-500">
@@ -44,7 +45,12 @@ const NavBar = () => {
             <div className="navbar-end ">
 
                 {
-                    user? <img src={user.photoURL || photo} className='w-12 h-12 rounded-full' alt='user' title={user.displayName || name} />: <Link to='/login' className="btn btn-secondary shadow-xl text-black font-bold">Login</Link>
+                    user? <img src={user.photoURL || photo} className='w-12 h-12 rounded-full'  title={user.displayName || name} />: <FaUser className='text-3xl mr-3'></FaUser>
+                    
+                    
+                    
+                }
+                {user? <button className='btn btn-secondary shadow-xl text-black font-bold' onClick={logOut}>Log out</button>: <Link to='/login' className="btn btn-secondary shadow-xl text-black font-bold">Login</Link>
                 }
 
                

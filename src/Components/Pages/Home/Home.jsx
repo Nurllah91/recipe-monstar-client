@@ -25,6 +25,8 @@ const Home = () => {
 
                 <h1 className="text-3xl font-bold text-pink-200 pt-10">Welcome to the Recipe Monstar.</h1>
 
+        
+
                 <h1 className="text-5xl lg:text-6xl text-white font-bold md:w-[60%] w-[90%] mx-auto mt-10">World best Chinese Chef is here with their testy recipe.</h1>
 
                 {
