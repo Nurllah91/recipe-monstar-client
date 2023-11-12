@@ -27,7 +27,7 @@ const NavBar = () => {
                         } to='/blog'>Blog</NavLink></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost  normal-case text-3xl nav-logo shadow-xl">Recipe Monstar</a>
+                <a className="btn btn-ghost  normal-case text-3xl nav-logo shadow-xl">Recipe Monster</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

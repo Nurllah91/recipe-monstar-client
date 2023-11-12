@@ -5,9 +5,11 @@ import Footer from "../Shared/Footer/Footer";
 const LoginLayout = () => {
     return (
         <div>
-           <NavBar></NavBar>
-           <Outlet></Outlet>
-           <Footer></Footer>
+            <NavBar></NavBar>
+            <div className='min-h-[calc(100vh-67px)]'>
+                <Outlet></Outlet>
+            </div>
+            <Footer></Footer>
         </div>
     );
 };

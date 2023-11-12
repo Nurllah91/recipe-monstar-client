@@ -23,7 +23,7 @@ const Home = () => {
 
             <div className="homeBanner min-h-[calc(100vh-40vh)] text-center md:min-h-[calc(100vh-62px)]">
 
-                <h1 className="text-3xl font-bold text-pink-200 pt-10">Welcome to the Recipe Monstar.</h1>
+                <h1 className="text-3xl font-bold text-pink-200 pt-10">Welcome to the Recipe Monster.</h1>
 
         
 
@@ -60,7 +60,7 @@ const Home = () => {
             <div>
                 <CookTogether></CookTogether>
             </div>
-            <div className=" bg-fuchsia-50 ">
+            <div className="">
                 <GetInTouch></GetInTouch>
             </div>
         </div>
