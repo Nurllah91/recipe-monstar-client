@@ -71,13 +71,13 @@ const Registration = () => {
 
     return (
        <div className="loginPage py-10">
-         <div className=" bg-gradient-to-l from-purple-400 to-pink-400  p-10 w-11/12 md:w-1/2 lg:w-1/4 mx-auto rounded-lg">
-            <h3 className="text-3xl my-3 font-bold">Please Sign up</h3>
+         <div className=" bg-gradient-to-l from-purple-400/50 to-pink-400/50  p-10 w-11/12 md:w-1/2 lg:w-1/4 mx-auto rounded-lg">
+            <h3 className="text-3xl my-3 font-bold text-white">Please Sign up</h3>
 
 
             <form onSubmit={handleSignUp}>
                 <div>
-                    <label className="block" htmlFor="name">Name</label>
+                    <label className="block text-white" htmlFor="name">Name</label>
                     <input
                         type="text"
                         id="name"
@@ -89,7 +89,7 @@ const Registration = () => {
                 </div>
 
                 <div>
-                    <label className="block" htmlFor="email">Email</label>
+                    <label className="block text-white" htmlFor="email">Email</label>
                     <input
                         type="email"
                         id="email"
@@ -100,7 +100,7 @@ const Registration = () => {
                     />
                 </div>
                 <div>
-                    <label className="block mt-3" htmlFor="password">Password</label>
+                    <label className="block mt-3 text-white" htmlFor="password">Password</label>
                     <input
                         type={show ? "text" : "password"}
                         id="password"
@@ -113,10 +113,10 @@ const Registration = () => {
                 </div>
                 <div className="mt-2">
                     <input onClick={handleShow} className="mr-2" type="checkbox" name="check" id="check" />
-                    {!show ? <span>Show password</span> : <span>Hide password</span>}
+                    {!show ? <span className="text-white">Show password</span> : <span className="text-white">Hide password</span>}
                 </div>
                 <div>
-                    <label className="block mt-3 " htmlFor="name">Photo URL</label>
+                    <label className="block mt-3 text-white" htmlFor="name">Photo URL</label>
                     <input
                         type="text"
                         id="photo"
@@ -132,7 +132,7 @@ const Registration = () => {
                 {error}
             </p>
 
-            <p className="mt-5">Already Have an account? <Link className="text-primary underline" to='/login'>Login</Link></p>
+            <p className="mt-5 text-white">Already Have an account? <Link className="text-primary underline font-bold" to='/login'>Login</Link></p>
 
         </div>
        </div>

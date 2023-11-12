@@ -11,7 +11,7 @@ const Blog = () => {
             <ReactToPdf targetRef={ref} filename="div-blue.pdf">
                 {
                     ({ toPdf }) => (
-                        <button className="btn btn-outline btn-secondary mt-5" onClick={toPdf}>Generate pdf this page</button>
+                        <button className="btn btn-outline btn-secondary mt-20" onClick={toPdf}>Generate pdf this page</button>
                     )}
             </ReactToPdf>
 

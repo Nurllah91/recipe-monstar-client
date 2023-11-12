@@ -7,6 +7,6 @@
 
 .active{
    font-weight: bold;
-   color: white;
-   background-color: rgb(220, 43, 226);
+   border-bottom: 2px solid red;
+   background-color: transparent !important;
 }

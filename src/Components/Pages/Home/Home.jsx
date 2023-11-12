@@ -6,6 +6,7 @@ import CookTogether from "../CookTogather/CookTogether";
 import GetInTouch from "../GetInTouch/GetInTouch";
 
 import ChefCard from "./ChefCard/ChefCard";
+import SectionHeading from "../../Utils/SectionHeading";
 
 const Home = () => {
 
@@ -23,7 +24,7 @@ const Home = () => {
 
             <div className="homeBanner min-h-[calc(100vh-40vh)] text-center md:min-h-[calc(100vh-62px)]">
 
-                <h1 className="text-3xl font-bold text-pink-200 pt-10">Welcome to the Recipe Monster.</h1>
+                <h1 className="text-3xl font-bold text-pink-200 pt-20">Welcome to the Recipe Monster.</h1>
 
         
 
@@ -50,7 +51,8 @@ const Home = () => {
 
 
             <div className="mt-10">
-                <h3 className="text-4xl text-center my-5 font-bold text-fuchsia-700 w-[95%] mx-auto">List of Famous chinese chef</h3>
+
+                <SectionHeading title={"Our Famous chinese chef"}>From Classic to Creative, Our Chefs Have Something for Every Palate</SectionHeading>
 
                     {
                         chefs.map(chef => <ChefCard key={chef.id} chef={chef}></ChefCard>)

@@ -19,7 +19,7 @@ const Footer = () => {
                     <Link className="link link-hover block">Chef&apos;s</Link>
                     <Link className="link link-hover block">Our Location</Link>
                 </div>
-                <div>
+                <div className="col-span-2 md:col-span-1">
                     <span className="footer-title block">Disclaimer</span>
                     <Link className="link link-hover block">Our Terms of use</Link>
                     <Link className="link link-hover block">Privacy policy</Link>
@@ -27,12 +27,12 @@ const Footer = () => {
                 </div>
 
                 <div>
-                <span className="footer-title block">Featured Food</span>
-                <div className="grid grid-cols-2">
-                    <img src="https://i.ibb.co/hFNS4zT/image-7.jpg" alt="img" />
-                    <img src="https://i.ibb.co/4V824sG/image-6.jpg" alt="img" />
-                    <img src="https://i.ibb.co/27TWh1m/image-5.jpg" alt="img" />
-                    <img src="https://i.ibb.co/VvtQXpy/image-10.jpg" alt="img" />
+                <span className="footer-title block text-center">Featured Food</span>
+                <div className="mx-auto h-56 w-56 overflow-hidden rounded-full grid grid-cols-2">
+                    <img className="w-full h-full" src="https://i.ibb.co/hFNS4zT/image-7.jpg" alt="img" />
+                    <img className="w-full h-full" src="https://i.ibb.co/4V824sG/image-6.jpg" alt="img" />
+                    <img className="w-full h-full" src="https://i.ibb.co/27TWh1m/image-5.jpg" alt="img" />
+                    <img className="w-full h-full" src="https://i.ibb.co/VvtQXpy/image-10.jpg" alt="img" />
                  
                    
 
