@@ -13,7 +13,7 @@ const GetInTouch = () => {
                     <div className="my-5 relative">
                         <input className="shadow-lg p-3 rounded-full w-full" type="text" placeholder="Enter Your Email" />
 
-                        <span className="bg-pink-500 text-white p-3 rounded-full absolute shadow-lg right-0">Subscribe</span>
+                        <span className="bg-orange-500 text-white p-3 rounded-full absolute shadow-lg right-0">Subscribe</span>
                     </div>
 
                 </div>

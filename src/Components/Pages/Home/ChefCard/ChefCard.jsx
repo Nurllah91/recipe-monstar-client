@@ -35,7 +35,7 @@ const ChefCard = ({ chef }) => {
 
                         <p className="rounded-full text-xl text-orange-100">{recipes.length} Recipes <ImSpoonKnife className="inline"/></p>
                         <p className="font-bold text-orange-100">{likes}k <FcLike title="Likes" className="text-orange-500 text-2xl mx-2 inline"></FcLike></p>
-                        <Link to={`/chefs/${id}`}> <button className="btn  border-orange-600 border-2 hover:bg-orange-500 hover:border-0 mt-6">View Recipes</button></Link>
+                        <Link to={`/chefs/${id}`}> <button className="myOutline mt-6">View Recipes</button></Link>
 
                     </div>
 
