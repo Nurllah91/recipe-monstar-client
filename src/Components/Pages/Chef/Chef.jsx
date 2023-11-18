@@ -16,15 +16,15 @@ const Chef = () => {
                     <h3 className="text-3xl font-bold mt-5">Name: {name}</h3>
                     <p className="w-[60%] mx-auto">{description}</p>
                     <div className="mt-5">
-                    <button className="btn btn-outline btn-secondary mx-2">{likes}k Likes</button>
-                    <button className="btn btn-outline btn-secondary mx-2">{recipes.length} Recipes</button>
-                    <button className="btn btn-outline btn-secondary mx-2">{years_of_experience} Years of Experience</button>
+                    <button className="myOutline mx-2">{likes}k Likes</button>
+                    <button className="myOutline mx-2">{recipes.length} Recipes</button>
+                    <button className="myOutline mx-2">{years_of_experience} Years of Experience</button>
                     </div>
                 </div>
 
             </div>
 
-            <div>
+            <div className="my-12">
                 {
                     recipes.map(recipe =><Recipe key={recipe.recipe_id} recipe={recipe}></Recipe>)
                 }
