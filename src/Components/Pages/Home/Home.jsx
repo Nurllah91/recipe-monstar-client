@@ -7,6 +7,7 @@ import GetInTouch from "../GetInTouch/GetInTouch";
 
 import ChefCard from "./ChefCard/ChefCard";
 import SectionHeading from "../../Utils/SectionHeading";
+import Recommended from "./Recommended/Recommended";
 
 const Home = () => {
 
@@ -63,6 +64,8 @@ const Home = () => {
                 </div>
 
             </div>
+            {/* Recommended section */}
+            <Recommended></Recommended>
             <div>
                 <CookTogether></CookTogether>
             </div>
