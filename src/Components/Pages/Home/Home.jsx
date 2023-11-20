@@ -8,6 +8,7 @@ import GetInTouch from "../GetInTouch/GetInTouch";
 import ChefCard from "./ChefCard/ChefCard";
 import SectionHeading from "../../Utils/SectionHeading";
 import Recommended from "./Recommended/Recommended";
+import Ingredients from "./Ingredients/Ingredients";
 
 const Home = () => {
 
@@ -51,7 +52,7 @@ const Home = () => {
 
 
 
-            <div className="mt-10">
+            <div className="mt-20">
 
                 {/* section headline */}
                 <SectionHeading title={"Our Famous chinese chef"}>From Classic to Creative, Our Chefs Have Something for Every Palate</SectionHeading>
@@ -65,13 +66,20 @@ const Home = () => {
 
             </div>
             {/* Recommended section */}
-            <Recommended></Recommended>
-            <div>
+            <div className="my-20">
+                <Recommended></Recommended>
+            </div>
+            {/* ingredients section */}
+            <div className="my-20">
+                <Ingredients></Ingredients>
+            </div>
+            <div className="my-20">
                 <CookTogether></CookTogether>
             </div>
-            <div className="">
+            <div className="my-20">
                 <GetInTouch></GetInTouch>
             </div>
+           
         </div>
     );
 };

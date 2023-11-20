@@ -4,7 +4,7 @@ import SectionHeading from "../../Utils/SectionHeading";
 
 const CookTogether = () => {
     return (
-        <div className="w-11/12 lg:w-9/12 mx-auto my-10">
+        <div className="w-11/12 lg:w-9/12 mx-auto">
             <SectionHeading title={"Cook Together"}>At Recipe Monster, we believe that cooking is a shared experience that brings people together.</SectionHeading>
             <div className="md:flex flex  flex-col-reverse md:flex-row items-center">
                 <div>

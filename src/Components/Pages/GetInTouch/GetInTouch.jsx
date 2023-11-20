@@ -5,7 +5,7 @@ import SectionHeading from "../../Utils/SectionHeading";
 
 const GetInTouch = () => {
     return (
-        <div className="w-11/12 lg:w-9/12 mx-auto my-10">
+        <div className="w-11/12 lg:w-9/12 mx-auto">
             <SectionHeading title={"Get in touch"}>If you want to get update regularly via email please subscribe</SectionHeading>
             <div className="flex flex-col md:flex-row-reverse items-center">
                 <div className="md:w-1/2 w-11/12 mx-auto"><Lottie animationData={emailAnimation} loop={true}></Lottie></div>
