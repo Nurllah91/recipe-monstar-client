@@ -9,6 +9,7 @@ import ChefCard from "./ChefCard/ChefCard";
 import SectionHeading from "../../Utils/SectionHeading";
 import Recommended from "./Recommended/Recommended";
 import Ingredients from "./Ingredients/Ingredients";
+import Overview from "./Overview/Overview";
 
 const Home = () => {
 
@@ -73,13 +74,20 @@ const Home = () => {
             <div className="my-20">
                 <Ingredients></Ingredients>
             </div>
+
+            {/* overview section */}
+            <div className="my-20 py-24 overviewSec">
+                <Overview></Overview>
+            </div>
+
             <div className="my-20">
                 <CookTogether></CookTogether>
             </div>
             <div className="my-20">
                 <GetInTouch></GetInTouch>
             </div>
-           
+
+          
         </div>
     );
 };

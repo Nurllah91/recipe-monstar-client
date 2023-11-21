@@ -10,3 +10,10 @@
 .myOutline{
 @apply px-3 py-2 text-white rounded-md border-2 border-orange-500 hover:bg-orange-500
 }
+
+.overviewSec{
+    background:linear-gradient(#142b2eab, #142b2e6e), url(https://i.ibb.co/P1Q38KF/image-13.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
