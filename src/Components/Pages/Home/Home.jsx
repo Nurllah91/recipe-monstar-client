@@ -36,13 +36,13 @@ const Home = () => {
 
                 {
                     user ? <div>
-                        <button className="myOutline mt-10 mx-5">Get started</button>
-                        <button onClick={handleLogOut} className="myOutline">Logout</button>
+                        <button className="myOutline my-10 mx-5">Get started</button>
+                        <button onClick={handleLogOut} className="myOutline my-10">Logout</button>
                     </div> :
                         <div>
-                            <Link to='/login'><button className="myOutline mt-10 mx-5">Login</button></Link>
+                            <Link to='/login'><button className="myOutline my-10 mx-5">Login</button></Link>
 
-                            <Link to='/registration'><button className="myOutline">Registration</button></Link>
+                            <Link to='/registration'><button className="myOutline my-10">Registration</button></Link>
                         </div>
                 }
 

@@ -71,7 +71,7 @@ const Registration = () => {
 
     return (
        <div className="loginPage py-10">
-         <div className=" bg-gradient-to-l from-purple-400/50 to-pink-400/50  p-10 w-11/12 md:w-1/2 lg:w-1/4 mx-auto rounded-lg">
+         <div className=" bg-gradient-to-l from-purple-400/50 to-pink-400/50 my-20  p-10 w-11/12 md:w-1/2 lg:w-1/4 mx-auto rounded-lg">
             <h3 className="text-3xl my-3 font-bold text-white">Please Sign up</h3>
 
 
