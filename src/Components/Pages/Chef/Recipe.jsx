@@ -66,7 +66,7 @@ const Recipe = ({ recipe }) => {
                     <tr>
                         <td colSpan={2} className='text-center border-2 border-yellow-500 p-6'><button
                             onClick={handleFavorite}
-                            className='myBtn'
+                            className={`${mark?"px-3 py-2 text-slate-700 rounded-md border-2 border-slate-500 bg-slate-200 ":"myBtn"}`}
                             disabled={mark}
                         >
                             Favorite<FaRegHeart className='ml-2 inline' />

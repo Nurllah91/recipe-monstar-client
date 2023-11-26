@@ -10,6 +10,7 @@ import SectionHeading from "../../Utils/SectionHeading";
 import Recommended from "./Recommended/Recommended";
 import Ingredients from "./Ingredients/Ingredients";
 import Overview from "./Overview/Overview";
+import GuestBook from "./GuestBook/GuestBook";
 
 const Home = () => {
 
@@ -84,10 +85,13 @@ const Home = () => {
                 <CookTogether></CookTogether>
             </div>
             <div className="my-20">
+                <GuestBook></GuestBook>
+            </div>
+            <div className="my-20">
                 <GetInTouch></GetInTouch>
             </div>
 
-          
+
         </div>
     );
 };
